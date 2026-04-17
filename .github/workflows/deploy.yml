@@ -21,7 +21,7 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd MERN-STACK-HOSPITAL-MANAGEMENT/backend
+          cd hospital-mangement-backend-deploy/backend
           git pull origin main
           docker compose down
           docker compose up -d --build
