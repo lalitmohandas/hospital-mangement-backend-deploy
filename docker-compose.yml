@@ -2,10 +2,10 @@ version: "3"
 
 services:
   backend:
-    image: 295662440783.dkr.ecr.ap-south-1.amazonaws.com/hospital-backend
+    image: 295662440783.dkr.ecr.ap-south-1.amazonaws.com/hospital-backend:latest
     container_name: hospital-backend
     ports:
       - "5000:5000"
     restart: always
     env_file:
-      - ./backend/.env
+      - .env
