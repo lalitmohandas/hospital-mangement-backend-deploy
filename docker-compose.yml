@@ -2,7 +2,7 @@ version: "3"
 
 services:
   backend:
-    build: ./backend
+    image: 295662440783.dkr.ecr.ap-south-1.amazonaws.com/hospital-backend
     container_name: hospital-backend
     ports:
       - "5000:5000"
