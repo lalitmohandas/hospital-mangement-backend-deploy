@@ -1,11 +1,24 @@
-version: "3"
+version: "3.8"
 
 services:
+
   backend:
     image: 295662440783.dkr.ecr.ap-south-1.amazonaws.com/hospital-backend:latest
-    container_name: hospital-backend
+    container_name: hospital_backend
     ports:
       - "5000:5000"
-    restart: always
     env_file:
       - .env
+    depends_on:
+      - mongo
+    restart: always
+
+  mongo:
+    image: mongo:7
+    container_name: hospital_mongo
+    volumes:
+      - mongo_data:/data/db
+    restart: always
+
+volumes:
+  mongo_data:
